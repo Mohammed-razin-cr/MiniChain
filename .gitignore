@@ -1,0 +1,15 @@
+/target/
+/release/
+/data/*
+*.log
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+*.redb
+*.key
+*.snapshot
+*.tmp
+.idea/
+.vscode/

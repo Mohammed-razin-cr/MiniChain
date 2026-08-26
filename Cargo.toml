@@ -1,0 +1,33 @@
+[package]
+name = "minichain"
+version = "0.1.0"
+edition = "2024"
+description = "A lightweight permissioned blockchain for tamper-evident records"
+license = "MIT"
+
+[dependencies]
+axum = { version = "0.8", features = ["ws"] }
+chrono = { version = "0.4", features = ["serde"] }
+clap = { version = "4", features = ["derive"] }
+ed25519-dalek = { version = "2", features = ["rand_core"] }
+rand_core = { version = "0.6", features = ["getrandom"] }
+redb = "4.2"
+reqwest = { version = "0.13", default-features = false, features = ["json"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+subtle = "2"
+tempfile = "3"
+thiserror = "2"
+tokio = { version = "1", features = ["io-util", "macros", "net", "rt-multi-thread", "signal", "sync", "time"] }
+toml = "0.9"
+tower-http = { version = "0.7", features = ["cors", "limit", "request-id", "trace"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+uuid = { version = "1", features = ["v4", "serde"] }
+zeroize = "1"
+
+[dev-dependencies]
+futures-util = "0.3"
+tokio-tungstenite = "0.29"
+tower = { version = "0.5", features = ["util"] }

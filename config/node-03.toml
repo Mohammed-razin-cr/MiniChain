@@ -1,0 +1,40 @@
+node_id = "node-03"
+listen_address = "127.0.0.1:9103"
+max_peers = 16
+chain_id = "6d696e69-6368-4169-8e00-000000000001"
+network_id = "minichain-local"
+storage_path = "data/node-03.redb"
+identity_path = "data/node-03.key"
+heartbeat_interval_ms = 5000
+
+[api]
+listen_address = "127.0.0.1:9203"
+allowed_origins = ["http://localhost:3000", "http://localhost:5173"]
+max_body_bytes = 131072
+rate_window_ms = 60000
+read_requests_per_window = 300
+write_requests_per_window = 60
+admin_requests_per_window = 10
+
+[[api.tokens]]
+identity = "development-viewer"
+role = "viewer"
+token_sha256 = "d08219426d69283f7e55b085e54613250cc07eed67ca74cb9032d200e3584701"
+
+[[api.tokens]]
+identity = "development-operator"
+role = "operator"
+token_sha256 = "f74a47e1887f07cab2867c37f0a0b425cd9ff46db87e0ad8892e962268ff32a1"
+
+[[api.tokens]]
+identity = "development-admin"
+role = "admin"
+token_sha256 = "77598517c240579790140801eb8cf8bd0f28186657e528eb236d2edcc0783fe8"
+
+[trusted_peers.node-01]
+address = "127.0.0.1:9101"
+public_key = [226, 138, 137, 112, 117, 51, 50, 189, 114, 254, 244, 19, 230, 176, 178, 239, 27, 74, 173, 218, 122, 162, 193, 65, 242, 51, 113, 42, 104, 118, 179, 81]
+
+[trusted_peers.node-02]
+address = "127.0.0.1:9102"
+public_key = [212, 238, 193, 134, 159, 177, 184, 164, 232, 23, 81, 106, 213, 169, 49, 85, 124, 181, 104, 5, 195, 235, 22, 232, 243, 168, 3, 214, 71, 223, 120, 105]
